@@ -285,7 +285,7 @@ namespace WindowsFormsApplication2
             }
             else
             {
-                MessageBox.Show("Port is not open");
+                MessageBox.Show("Port is not oOpen");
                 return false;
             }
         }
@@ -361,40 +361,6 @@ namespace WindowsFormsApplication2
         private void button3_Click(object sender, EventArgs e)
         {
             SendFrame(mess1);
-            //transfer newmess = fs.getClass(1);
-            //SendFrame(newmess);
-            /*
-            if (serialPort1.IsOpen)
-            {
-                CANmessage mess = new CANmessage();
-                mess= fs.readMes1();
-                //serialPort1.Write(mess);
-                //MessageBox.Show(send);
-                toolStripStatusLabel1.Text = "Message1 now sent! ";
-
-            }*/
-        }
-        
-        public void getMes(transfer mess, int value){
-            switch (value)
-            {
-                    
-                case 1:
-                    mess1 = mess;
-                    break;
-                case 2:
-                    mess2 = mess;
-                    break;
-                case 3:
-                    mess3 = mess;
-                    break;
-                case 4:
-                    mess4 = mess;
-                    break;
-                case 5:
-                    mess5 = mess;
-                    break;
-            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -406,6 +372,18 @@ namespace WindowsFormsApplication2
         {
             SendFrame(mess3);
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            SendFrame(mess4);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            SendFrame(mess5);
+        }
+
+        
     }
 
      }
