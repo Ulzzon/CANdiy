@@ -57,6 +57,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.listView1 = new System.Windows.Forms.ListView();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -72,7 +73,16 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.timer4 = new System.Windows.Forms.Timer(this.components);
+            this.timer5 = new System.Windows.Forms.Timer(this.components);
+            this.timer6 = new System.Windows.Forms.Timer(this.components);
+            this.timer7 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -335,6 +345,12 @@
             this.toolStripStatusLabel2.Text = "Tx";
             this.toolStripStatusLabel2.Visible = false;
             // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(47, 17);
+            this.toolStripStatusLabel3.Text = "Stopped";
+            // 
             // listView1
             // 
             this.listView1.FullRowSelect = true;
@@ -452,6 +468,7 @@
             this.button6.TabIndex = 32;
             this.button6.Text = "Message4";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -461,18 +478,93 @@
             this.button7.TabIndex = 33;
             this.button7.Text = "Message5";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // toolStripStatusLabel3
+            // checkBox3
             // 
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(47, 17);
-            this.toolStripStatusLabel3.Text = "Stopped";
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(643, 153);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(90, 17);
+            this.checkBox3.TabIndex = 34;
+            this.checkBox3.Text = "Send by timer";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(643, 182);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(90, 17);
+            this.checkBox4.TabIndex = 35;
+            this.checkBox4.Text = "Send by timer";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Location = new System.Drawing.Point(642, 215);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(90, 17);
+            this.checkBox5.TabIndex = 36;
+            this.checkBox5.Text = "Send by timer";
+            this.checkBox5.UseVisualStyleBackColor = true;
+            this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
+            // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Location = new System.Drawing.Point(643, 244);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(90, 17);
+            this.checkBox6.TabIndex = 37;
+            this.checkBox6.Text = "Send by timer";
+            this.checkBox6.UseVisualStyleBackColor = true;
+            this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
+            // 
+            // checkBox7
+            // 
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Location = new System.Drawing.Point(643, 275);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(90, 17);
+            this.checkBox7.TabIndex = 38;
+            this.checkBox7.Text = "Send by timer";
+            this.checkBox7.UseVisualStyleBackColor = true;
+            this.checkBox7.CheckedChanged += new System.EventHandler(this.checkBox7_CheckedChanged);
+            // 
+            // timer3
+            // 
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
+            // timer4
+            // 
+            this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
+            // 
+            // timer5
+            // 
+            this.timer5.Tick += new System.EventHandler(this.timer5_Tick);
+            // 
+            // timer6
+            // 
+            this.timer6.Tick += new System.EventHandler(this.timer6_Tick);
+            // 
+            // timer7
+            // 
+            this.timer7.Tick += new System.EventHandler(this.timer7_Tick);
             // 
             // CANdiy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(783, 525);
+            this.Controls.Add(this.checkBox7);
+            this.Controls.Add(this.checkBox6);
+            this.Controls.Add(this.checkBox5);
+            this.Controls.Add(this.checkBox4);
+            this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -565,6 +657,16 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Timer timer4;
+        private System.Windows.Forms.Timer timer5;
+        private System.Windows.Forms.Timer timer6;
+        private System.Windows.Forms.Timer timer7;
     }
 }
 

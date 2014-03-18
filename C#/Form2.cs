@@ -41,6 +41,7 @@ namespace WindowsFormsApplication2
             textBox1_8.Text = t1data[5];
             textBox1_9.Text = t1data[6];
             textBox1_10.Text = t1data[7];
+            textBox1_11.Text = trans1.timer.ToString();
 
             textBox2_1.Text = trans2.id;
             textBox2_2.Text = trans2.dl.ToString();
@@ -53,6 +54,7 @@ namespace WindowsFormsApplication2
             textBox2_8.Text = t2data[5];
             textBox2_9.Text = t2data[6];
             textBox2_10.Text = t2data[7];
+            textBox2_11.Text = trans2.timer.ToString();
 
             textBox3_1.Text = trans3.id;
             textBox3_2.Text = trans3.dl.ToString();
@@ -65,6 +67,7 @@ namespace WindowsFormsApplication2
             textBox3_8.Text = t3data[5];
             textBox3_9.Text = t3data[6];
             textBox3_10.Text = t3data[7];
+            textBox3_11.Text = trans3.timer.ToString();
 
             textBox4_1.Text = trans4.id;
             textBox4_2.Text = trans4.dl.ToString();
@@ -77,6 +80,7 @@ namespace WindowsFormsApplication2
             textBox4_8.Text = t4data[5];
             textBox4_9.Text = t4data[6];
             textBox4_10.Text = t4data[7];
+            textBox4_11.Text = trans4.timer.ToString();
 
             textBox5_1.Text = trans5.id;
             textBox5_2.Text = trans5.dl.ToString();
@@ -89,6 +93,7 @@ namespace WindowsFormsApplication2
             textBox5_8.Text = t5data[5];
             textBox5_9.Text = t5data[6];
             textBox5_10.Text = t5data[7];
+            textBox5_11.Text = trans5.timer.ToString();
         }
 
 
@@ -107,6 +112,7 @@ namespace WindowsFormsApplication2
             try
             {
                 trans1.dl = Convert.ToInt32(textBox1_2.Text);
+                trans1.timer = Convert.ToInt32(textBox1_11.Text);
             }
             catch {
                 MessageBox.Show("Convert faild");
@@ -120,6 +126,7 @@ namespace WindowsFormsApplication2
             dataArray[6] = textBox1_9.Text;
             dataArray[7] = textBox1_10.Text;
             trans1.data = String.Join(" ", dataArray);
+            
             //fs.getMes(mess1, 1);
             //string data = ;
             label4.Text = trans1.data;
@@ -134,6 +141,7 @@ namespace WindowsFormsApplication2
             try
             {
                 trans2.dl = Convert.ToInt32(textBox2_2.Text);
+                trans2.timer = Convert.ToInt32(textBox2_11.Text);
             }
             catch { }
             dataArray[0] = textBox1_3.Text;
@@ -155,6 +163,7 @@ namespace WindowsFormsApplication2
             try
             {
                 trans3.dl = Convert.ToInt32(textBox3_2.Text);
+                trans3.timer = Convert.ToInt32(textBox3_11.Text);
             }
             catch { }
             dataArray[0] = textBox1_3.Text;
@@ -176,6 +185,7 @@ namespace WindowsFormsApplication2
             try
             {
                 trans4.dl = Convert.ToInt32(textBox4_2.Text);
+                trans4.timer = Convert.ToInt32(textBox4_11.Text);
             }
             catch { }
             dataArray[0] = textBox4_3.Text;
@@ -196,6 +206,7 @@ namespace WindowsFormsApplication2
             try
             {
                 trans5.dl = Convert.ToInt32(textBox5_2.Text);
+                trans5.timer = Convert.ToInt32(textBox5_11.Text);
             }
             catch { }
             dataArray[0] = textBox5_3.Text;

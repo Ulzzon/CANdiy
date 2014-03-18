@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual C# Express 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication2", "WindowsFormsApplication2.csproj", "{66B5F194-60C9-4D79-B828-2331DD528C8A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CANdiy", "CANdiy.csproj", "{66B5F194-60C9-4D79-B828-2331DD528C8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

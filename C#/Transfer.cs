@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Drawing;
+using System.Timers;
 
 namespace WindowsFormsApplication2
 {
@@ -12,14 +13,14 @@ namespace WindowsFormsApplication2
     {
         private string _data;
         private string _id;
-        private int _dl;
+        private int _dl, _timer;
 
         public transfer()
         {
             _id = "0x000";
             _dl = 8;
             _data = "00 00 00 00 00 00 00 00";
-
+            _timer = 0;
         }
 
         public string id
@@ -53,5 +54,11 @@ namespace WindowsFormsApplication2
             return dataarray;
         }
 
+        public int timer
+        {
+            get { return _timer; }
+            set { _timer = value; }
+        }
+        
     }
 }

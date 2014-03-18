@@ -17,3 +17,5 @@ C:\Documents and Settings\Broccoli Exjobb ht13\My Documents\Arduino_kurs\C#\obj\
 C:\Documents and Settings\Broccoli Exjobb ht13\My Documents\Arduino_kurs\C#\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Documents and Settings\Broccoli Exjobb ht13\My Documents\Arduino_kurs\C#\obj\x86\Debug\WindowsFormsApplication2.MessageSetup.resources
 C:\Documents and Settings\Broccoli Exjobb ht13\My Documents\Arduino_kurs\C#\obj\x86\Debug\WindowsFormsApplication2.CANdiy.resources
+C:\Documents and Settings\Broccoli Exjobb ht13\CANdiy\C#\obj\x86\Debug\WindowsFormsApplication2.exe
+C:\Documents and Settings\Broccoli Exjobb ht13\CANdiy\C#\obj\x86\Debug\WindowsFormsApplication2.pdb

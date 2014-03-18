@@ -22,12 +22,13 @@ namespace WindowsFormsApplication2
     
     public partial class CANdiy : Form
     {
-        int time1,time2,sec,min,h = 0;
+        int time1,sec,min,h = 0;
         string stimer;
         string fileDir;
         decimal comport = 1;
 
-        transfer send = new transfer();
+        transfer mess0 = new transfer();
+        //transfer send = new transfer();
         transfer mess1 = new transfer();
         transfer mess2 = new transfer();
         transfer mess3 = new transfer();
@@ -101,14 +102,19 @@ namespace WindowsFormsApplication2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            if (!serialPort1.IsOpen)
             {
-                serialPort1.PortName = "COM" + comport;
-                serialPort1.Open();
+                try
+                {
+                    serialPort1.PortName = "COM" + comport;
+                    serialPort1.Open();
+                }
+                catch
+                {
+                    MessageBox.Show("Could not open port");
+                }
             }
-            catch {
-                MessageBox.Show("Could not open port");
-            }
+            else MessageBox.Show("The port is already open");
             if (serialPort1.IsOpen)
             {
                 timer1.Interval = 10;
@@ -195,51 +201,7 @@ namespace WindowsFormsApplication2
 
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            time1++;
-            if(time1 >= 100){
-                sec++;
-                time1 = 0;
-                if (sec >= 60)
-                {
-                    min++;
-                    sec= 0;
-                    if (min >= 60)
-                    {
-                        h++;
-                        min = 0;
-                    }
-                }
-            }
-            stimer = String.Format("{0,2:d} : {1,2:d} : {2,2:d} : {3,2:d} ",h,min,sec,time1);
-        }
-
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            //StringFormatFlags.DisplayFormatControl.CompareTo(maskedTextBox1.Text);
-            string stime = maskedTextBox1.Text;
-            //int sendtimer = int.Parse(stimer,);
-            int sendtimer = 100;
-            try
-            {
-                sendtimer = Convert.ToInt32(stime);
-            }
-            catch
-            {
-                MessageBox.Show("Not abel to convert string to int");
-            }
-            label1.Text = String.Format("{0:3}",sendtimer);
-            time2++;
-
-            if (time2 == sendtimer)
-            {
-                //SendFrame();
-                time2 = 0;
-                toolStripStatusLabel2.Visible = true;
-            }
-            else if (time2 == 10) toolStripStatusLabel2.Visible = false;
-        }
+        
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
@@ -248,7 +210,7 @@ namespace WindowsFormsApplication2
 
         private void sendButton_Click(object sender, EventArgs e)
         {
-            transfer mess0 = new transfer();
+            
             string[] dataArray = new string[64];
             mess0.id= textBox1.Text;
             try
@@ -285,7 +247,7 @@ namespace WindowsFormsApplication2
             }
             else
             {
-                MessageBox.Show("Port is not oOpen");
+                MessageBox.Show("Port is not open");
                 return false;
             }
         }
@@ -293,7 +255,20 @@ namespace WindowsFormsApplication2
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked) timer2.Enabled = true;
+            int sendtimer = 100;
+            try
+            {
+                sendtimer = Convert.ToInt32(maskedTextBox1.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Not abel to convert string to int");
+            }
+            if (checkBox1.Checked && sendtimer != 0)
+            {
+                timer2.Interval = sendtimer;
+                timer2.Enabled = true;
+            }
             else timer2.Enabled = false;
         }
 
@@ -301,6 +276,61 @@ namespace WindowsFormsApplication2
         {
             if (checkBox2.Checked) saveFileDialog1.ShowDialog();
             
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            
+            if (checkBox3.Checked && mess1.timer != 0)
+            {
+                timer3.Interval = mess1.timer;
+                timer3.Enabled = true;
+            }
+            else timer3.Enabled = false;
+        }
+
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            
+            if (checkBox4.Checked && mess2.timer != 0)
+            {
+                timer3.Interval = mess2.timer;
+                timer4.Enabled = true;
+            }
+            else timer5.Enabled = false;
+        }
+
+        private void checkBox5_CheckedChanged(object sender, EventArgs e)
+        {
+            
+            if (checkBox5.Checked && mess3.timer != 0)
+            {
+                timer5.Interval = mess3.timer;
+                timer5.Enabled = true;
+            }
+            else timer5.Enabled = false;
+        }
+
+        private void checkBox6_CheckedChanged(object sender, EventArgs e)
+        {
+            
+            if (checkBox6.Checked && mess4.timer != 0)
+            {
+                timer6.Interval = mess4.timer;
+                timer6.Enabled = true;
+            }
+            else timer6.Enabled = false;
+        }
+
+        private void checkBox7_CheckedChanged(object sender, EventArgs e)
+        {
+            
+            if (checkBox7.Checked && mess5.timer != 0)
+            {
+                timer7.Interval = mess5.timer;
+                timer7.Enabled = true;
+            }
+            else timer7.Enabled = false;
         }
 
         private void saveFileDialog1_FileOk_1(object sender, CancelEventArgs e)
@@ -383,7 +413,62 @@ namespace WindowsFormsApplication2
             SendFrame(mess5);
         }
 
-        
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            time1++;
+            if (time1 >= 100)
+            {
+                sec++;
+                time1 = 0;
+                if (sec >= 60)
+                {
+                    min++;
+                    sec = 0;
+                    if (min >= 60)
+                    {
+                        h++;
+                        min = 0;
+                    }
+                }
+            }
+            stimer = String.Format("{0,2:d} : {1,2:d} : {2,2:d} : {3,2:d} ", h, min, sec, time1);
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            //StringFormatFlags.DisplayFormatControl.CompareTo(maskedTextBox1.Text);
+                SendFrame(mess0);
+                //time2 = 0;
+                toolStripStatusLabel2.Visible = true;
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            if (mess1.timer != 0)
+            {
+                SendFrame(mess1);
+            }
+        }
+
+        private void timer4_Tick(object sender, EventArgs e)
+        {
+            SendFrame(mess2);
+        }
+
+        private void timer5_Tick(object sender, EventArgs e)
+        {
+            SendFrame(mess3);
+        }
+
+        private void timer6_Tick(object sender, EventArgs e)
+        {
+            SendFrame(mess4);
+        }
+
+        private void timer7_Tick(object sender, EventArgs e)
+        {
+            SendFrame(mess5);
+        } 
     }
 
      }

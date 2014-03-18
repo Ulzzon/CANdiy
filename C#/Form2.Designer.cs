@@ -30,6 +30,12 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBox5_5 = new System.Windows.Forms.TextBox();
+            this.textBox5_4 = new System.Windows.Forms.TextBox();
+            this.textBox5_3 = new System.Windows.Forms.TextBox();
+            this.textBox5_2 = new System.Windows.Forms.TextBox();
+            this.textBox5_7 = new System.Windows.Forms.TextBox();
+            this.textBox5_6 = new System.Windows.Forms.TextBox();
             this.textBox1_2 = new System.Windows.Forms.TextBox();
             this.textBox1_11 = new System.Windows.Forms.TextBox();
             this.textBox1_3 = new System.Windows.Forms.TextBox();
@@ -66,10 +72,6 @@
             this.textBox3_10 = new System.Windows.Forms.TextBox();
             this.textBox3_11 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.textBox4_1 = new System.Windows.Forms.TextBox();
             this.textBox4_2 = new System.Windows.Forms.TextBox();
             this.textBox4_3 = new System.Windows.Forms.TextBox();
@@ -81,19 +83,17 @@
             this.textBox4_9 = new System.Windows.Forms.TextBox();
             this.textBox4_10 = new System.Windows.Forms.TextBox();
             this.textBox4_11 = new System.Windows.Forms.TextBox();
-            this.textBox5_6 = new System.Windows.Forms.TextBox();
-            this.textBox5_7 = new System.Windows.Forms.TextBox();
-            this.textBox5_2 = new System.Windows.Forms.TextBox();
-            this.textBox5_3 = new System.Windows.Forms.TextBox();
-            this.textBox5_11 = new System.Windows.Forms.TextBox();
-            this.textBox5_8 = new System.Windows.Forms.TextBox();
-            this.textBox5_10 = new System.Windows.Forms.TextBox();
-            this.textBox5_1 = new System.Windows.Forms.TextBox();
-            this.textBox5_9 = new System.Windows.Forms.TextBox();
-            this.textBox5_4 = new System.Windows.Forms.TextBox();
-            this.textBox5_5 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.textBox5_1 = new System.Windows.Forms.TextBox();
+            this.textBox5_8 = new System.Windows.Forms.TextBox();
+            this.textBox5_11 = new System.Windows.Forms.TextBox();
+            this.textBox5_10 = new System.Windows.Forms.TextBox();
+            this.textBox5_9 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -183,6 +183,54 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(493, 189);
             this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // textBox5_5
+            // 
+            this.textBox5_5.Location = new System.Drawing.Point(172, 151);
+            this.textBox5_5.Name = "textBox5_5";
+            this.textBox5_5.Size = new System.Drawing.Size(30, 20);
+            this.textBox5_5.TabIndex = 57;
+            this.textBox5_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox5_4
+            // 
+            this.textBox5_4.Location = new System.Drawing.Point(136, 151);
+            this.textBox5_4.Name = "textBox5_4";
+            this.textBox5_4.Size = new System.Drawing.Size(30, 20);
+            this.textBox5_4.TabIndex = 56;
+            this.textBox5_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox5_3
+            // 
+            this.textBox5_3.Location = new System.Drawing.Point(100, 151);
+            this.textBox5_3.Name = "textBox5_3";
+            this.textBox5_3.Size = new System.Drawing.Size(30, 20);
+            this.textBox5_3.TabIndex = 50;
+            this.textBox5_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox5_2
+            // 
+            this.textBox5_2.Location = new System.Drawing.Point(76, 151);
+            this.textBox5_2.Name = "textBox5_2";
+            this.textBox5_2.Size = new System.Drawing.Size(18, 20);
+            this.textBox5_2.TabIndex = 49;
+            this.textBox5_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox5_7
+            // 
+            this.textBox5_7.Location = new System.Drawing.Point(244, 151);
+            this.textBox5_7.Name = "textBox5_7";
+            this.textBox5_7.Size = new System.Drawing.Size(30, 20);
+            this.textBox5_7.TabIndex = 48;
+            this.textBox5_7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox5_6
+            // 
+            this.textBox5_6.Location = new System.Drawing.Point(208, 151);
+            this.textBox5_6.Name = "textBox5_6";
+            this.textBox5_6.Size = new System.Drawing.Size(30, 20);
+            this.textBox5_6.TabIndex = 47;
+            this.textBox5_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox1_2
             // 
@@ -480,42 +528,6 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(127, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "ID";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(151, 39);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(21, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "DL";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(314, 39);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Data";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(461, 39);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Timer";
-            // 
             // textBox4_1
             // 
             this.textBox4_1.Location = new System.Drawing.Point(3, 114);
@@ -604,94 +616,6 @@
             this.textBox4_11.TabIndex = 46;
             this.textBox4_11.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox5_6
-            // 
-            this.textBox5_6.Location = new System.Drawing.Point(208, 151);
-            this.textBox5_6.Name = "textBox5_6";
-            this.textBox5_6.Size = new System.Drawing.Size(30, 20);
-            this.textBox5_6.TabIndex = 47;
-            this.textBox5_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox5_7
-            // 
-            this.textBox5_7.Location = new System.Drawing.Point(244, 151);
-            this.textBox5_7.Name = "textBox5_7";
-            this.textBox5_7.Size = new System.Drawing.Size(30, 20);
-            this.textBox5_7.TabIndex = 48;
-            this.textBox5_7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox5_2
-            // 
-            this.textBox5_2.Location = new System.Drawing.Point(76, 151);
-            this.textBox5_2.Name = "textBox5_2";
-            this.textBox5_2.Size = new System.Drawing.Size(18, 20);
-            this.textBox5_2.TabIndex = 49;
-            this.textBox5_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox5_3
-            // 
-            this.textBox5_3.Location = new System.Drawing.Point(100, 151);
-            this.textBox5_3.Name = "textBox5_3";
-            this.textBox5_3.Size = new System.Drawing.Size(30, 20);
-            this.textBox5_3.TabIndex = 50;
-            this.textBox5_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox5_11
-            // 
-            this.textBox5_11.Location = new System.Drawing.Point(388, 151);
-            this.textBox5_11.Name = "textBox5_11";
-            this.textBox5_11.Size = new System.Drawing.Size(43, 20);
-            this.textBox5_11.TabIndex = 51;
-            this.textBox5_11.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox5_8
-            // 
-            this.textBox5_8.Location = new System.Drawing.Point(280, 151);
-            this.textBox5_8.Name = "textBox5_8";
-            this.textBox5_8.Size = new System.Drawing.Size(30, 20);
-            this.textBox5_8.TabIndex = 52;
-            this.textBox5_8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox5_10
-            // 
-            this.textBox5_10.Location = new System.Drawing.Point(352, 151);
-            this.textBox5_10.Name = "textBox5_10";
-            this.textBox5_10.Size = new System.Drawing.Size(30, 20);
-            this.textBox5_10.TabIndex = 53;
-            this.textBox5_10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox5_1
-            // 
-            this.textBox5_1.Location = new System.Drawing.Point(3, 151);
-            this.textBox5_1.Name = "textBox5_1";
-            this.textBox5_1.Size = new System.Drawing.Size(67, 20);
-            this.textBox5_1.TabIndex = 54;
-            this.textBox5_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox5_9
-            // 
-            this.textBox5_9.Location = new System.Drawing.Point(316, 151);
-            this.textBox5_9.Name = "textBox5_9";
-            this.textBox5_9.Size = new System.Drawing.Size(30, 20);
-            this.textBox5_9.TabIndex = 55;
-            this.textBox5_9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox5_4
-            // 
-            this.textBox5_4.Location = new System.Drawing.Point(136, 151);
-            this.textBox5_4.Name = "textBox5_4";
-            this.textBox5_4.Size = new System.Drawing.Size(30, 20);
-            this.textBox5_4.TabIndex = 56;
-            this.textBox5_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox5_5
-            // 
-            this.textBox5_5.Location = new System.Drawing.Point(172, 151);
-            this.textBox5_5.Name = "textBox5_5";
-            this.textBox5_5.Size = new System.Drawing.Size(30, 20);
-            this.textBox5_5.TabIndex = 57;
-            this.textBox5_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(437, 114);
@@ -711,6 +635,82 @@
             this.button5.Text = "Save";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // textBox5_1
+            // 
+            this.textBox5_1.Location = new System.Drawing.Point(3, 151);
+            this.textBox5_1.Name = "textBox5_1";
+            this.textBox5_1.Size = new System.Drawing.Size(67, 20);
+            this.textBox5_1.TabIndex = 54;
+            this.textBox5_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox5_8
+            // 
+            this.textBox5_8.Location = new System.Drawing.Point(280, 151);
+            this.textBox5_8.Name = "textBox5_8";
+            this.textBox5_8.Size = new System.Drawing.Size(30, 20);
+            this.textBox5_8.TabIndex = 52;
+            this.textBox5_8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox5_11
+            // 
+            this.textBox5_11.Location = new System.Drawing.Point(388, 151);
+            this.textBox5_11.Name = "textBox5_11";
+            this.textBox5_11.Size = new System.Drawing.Size(43, 20);
+            this.textBox5_11.TabIndex = 51;
+            this.textBox5_11.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox5_10
+            // 
+            this.textBox5_10.Location = new System.Drawing.Point(352, 151);
+            this.textBox5_10.Name = "textBox5_10";
+            this.textBox5_10.Size = new System.Drawing.Size(30, 20);
+            this.textBox5_10.TabIndex = 53;
+            this.textBox5_10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox5_9
+            // 
+            this.textBox5_9.Location = new System.Drawing.Point(316, 151);
+            this.textBox5_9.Name = "textBox5_9";
+            this.textBox5_9.Size = new System.Drawing.Size(30, 20);
+            this.textBox5_9.TabIndex = 55;
+            this.textBox5_9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(127, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(18, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "ID";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(151, 39);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(21, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "DL";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(314, 39);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(30, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Data";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(461, 39);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Timer ms";
             // 
             // MessageSetup
             // 
