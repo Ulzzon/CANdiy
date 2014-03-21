@@ -11,14 +11,7 @@ using System.IO;
 
 
 namespace WindowsFormsApplication2
-{
-
-       /*
-            public string id;
-            public string dl;
-            public string[] data;
-        */
-    
+{ 
     
     public partial class CANdiy : Form
     {
@@ -28,13 +21,11 @@ namespace WindowsFormsApplication2
         decimal comport = 1;
 
         transfer mess0 = new transfer();
-        //transfer send = new transfer();
         transfer mess1 = new transfer();
         transfer mess2 = new transfer();
         transfer mess3 = new transfer();
         transfer mess4 = new transfer();
         transfer mess5 = new transfer();
-       // MessageSetup fs = new MessageSetup();
 
         public CANdiy()
         {
@@ -468,6 +459,12 @@ namespace WindowsFormsApplication2
         private void timer7_Tick(object sender, EventArgs e)
         {
             SendFrame(mess5);
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox1 ab = new AboutBox1();
+            ab.ShowDialog();
         } 
     }
 
