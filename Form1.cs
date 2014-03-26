@@ -8,11 +8,17 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 using System.IO;
-using System.Collections;
 
 
 namespace WindowsFormsApplication2
-{ 
+{
+
+       /*
+            public string id;
+            public string dl;
+            public string[] data;
+        */
+    
     
     public partial class CANdiy : Form
     {
@@ -20,14 +26,15 @@ namespace WindowsFormsApplication2
         string stimer;
         string fileDir;
         decimal comport = 1;
-        private int sortColumn = -1;
 
         transfer mess0 = new transfer();
+        //transfer send = new transfer();
         transfer mess1 = new transfer();
         transfer mess2 = new transfer();
         transfer mess3 = new transfer();
         transfer mess4 = new transfer();
         transfer mess5 = new transfer();
+       // MessageSetup fs = new MessageSetup();
 
         public CANdiy()
         {
@@ -82,6 +89,13 @@ namespace WindowsFormsApplication2
                     MessageBox.Show("Not able to Invoke");
                 }
                 myString = "";
+                    /*
+            
+                        serialPort1.Read(buffer, 0, 1);
+                        string s = Encoding.UTF8.GetString(buffer, 0, buffer.Length);
+                        label1.BeginInvoke(delegate { label1.Text = "Trade" + s; });
+
+                    }*/
                 
             }
         }
@@ -181,6 +195,12 @@ namespace WindowsFormsApplication2
             timer1.Enabled = false;
         }
 
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -207,7 +227,7 @@ namespace WindowsFormsApplication2
             dataArray[5] = textBox8.Text;
             dataArray[6] = textBox9.Text;
             dataArray[7] = textBox10.Text;
-            mess0.data = String.Join(" ", dataArray);
+            mess0.data = dataArray.ToString();
             SendFrame(mess0);
 
         }
@@ -217,12 +237,12 @@ namespace WindowsFormsApplication2
         {
             //string data = String.Join(" ", sendMess.data);
             string print = String.Format("{0,3:H} {1,1} {2}\n", sendMess.id, sendMess.dl, sendMess.data);
-    
+
+            PrintLabel(sendMess.id, sendMess.dl, sendMess.data, false);
             if(serialPort1.IsOpen && print.Length >= 5)
             {
                 serialPort1.Write(print);
                 toolStripStatusLabel1.Text = "Message now sent! ";
-                PrintLabel(sendMess.id, sendMess.dl, sendMess.data, false);
                 return true;
             }
             else
@@ -448,67 +468,9 @@ namespace WindowsFormsApplication2
         private void timer7_Tick(object sender, EventArgs e)
         {
             SendFrame(mess5);
-        }
-
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AboutBox1 ab = new AboutBox1();
-            ab.ShowDialog();
-        }
-
-        private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
-        {
-            if (e.Column != sortColumn)
-            {
-                // Set the sort column to the new column.
-                sortColumn = e.Column;
-                // Set the sort order to ascending by default.
-                listView1.Sorting = SortOrder.Ascending;
-            }
-            else
-            {
-                // Determine what the last sort order was and change it.
-                if (listView1.Sorting == SortOrder.Ascending)
-                    listView1.Sorting = SortOrder.Descending;
-                else
-                    listView1.Sorting = SortOrder.Ascending;
-            }
-
-            // Call the sort method to manually sort.
-            listView1.Sort();
-            // Set the ListViewItemSorter property to a new ListViewItemComparer
-            // object.
-            this.listView1.ListViewItemSorter = new ListViewItemComparer(e.Column, listView1.Sorting);
         } 
     }
 
-    class ListViewItemComparer : IComparer
-    {
-        private int col;
-        private SortOrder order;
-        public ListViewItemComparer()
-        {
-            col = 0;
-            order = SortOrder.Ascending;
-        }
-        public ListViewItemComparer(int column, SortOrder order)
-        {
-            col = column;
-            this.order = order;
-        }
-        public int Compare(object x, object y) 
-    {
-        int returnVal= -1;
-        returnVal = String.Compare(((ListViewItem)x).SubItems[col].Text,
-                                ((ListViewItem)y).SubItems[col].Text);
-        // Determine whether the sort order is descending.
-        if (order == SortOrder.Descending)
-            // Invert the value returned by String.Compare.
-            returnVal *= -1;
-        return returnVal;
-    }
-    }
-    
      }
 
 
