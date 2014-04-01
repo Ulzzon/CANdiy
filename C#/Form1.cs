@@ -39,10 +39,10 @@ namespace WindowsFormsApplication2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            numericUpDown1.Value = Properties.Settings.Default.SerialPort;
         }
 
-        private void function1()
+        private void serialThread()
         {
             var buffer = new byte[64];
             string myString = "";
@@ -105,10 +105,12 @@ namespace WindowsFormsApplication2
             {
                 timer1.Interval = 10;
                 timer1.Enabled = true;
-                Thread th = new Thread(function1);
+                Thread th = new Thread(serialThread);
                 th.IsBackground = true;
                 th.Start();
                 toolStripStatusLabel3.Text = "Running";
+                Properties.Settings.Default.SerialPort = comport;
+                Properties.Settings.Default.Save();
             }
         }
 
@@ -186,6 +188,7 @@ namespace WindowsFormsApplication2
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             comport = numericUpDown1.Value;
+            
         }
 
         private void sendButton_Click(object sender, EventArgs e)
@@ -215,14 +218,25 @@ namespace WindowsFormsApplication2
 
         public Boolean SendFrame(transfer sendMess)
         {
-            //string data = String.Join(" ", sendMess.data);
-            string print = String.Format("{0,3:H} {1,1} {2}\n", sendMess.id, sendMess.dl, sendMess.data);
+            //string data = String.Join(" ", sendMess.dataArray());
+
+            StringBuilder builtString = new StringBuilder();
+            string[] sendArray = new string[8];
+
+            for (int i = 0; i < sendMess.dl; i++)
+            {
+                sendArray = sendMess.dataArray();
+                builtString = builtString.Append(sendArray[i] + ' ');
+            }
+            string dataString = builtString.ToString();
+
+            string print = String.Format("{0,3:H} {1,1} {2}\n", sendMess.id, sendMess.dl, dataString);
     
             if(serialPort1.IsOpen && print.Length >= 5)
             {
                 serialPort1.Write(print);
                 toolStripStatusLabel1.Text = "Message now sent! ";
-                PrintLabel(sendMess.id, sendMess.dl, sendMess.data, false);
+                PrintLabel(sendMess.id, sendMess.dl, dataString, false);
                 return true;
             }
             else
@@ -464,14 +478,22 @@ namespace WindowsFormsApplication2
                 sortColumn = e.Column;
                 // Set the sort order to ascending by default.
                 listView1.Sorting = SortOrder.Ascending;
+                listView1.SetSortIcon(e.Column, SortOrder.Ascending);
             }
             else
             {
                 // Determine what the last sort order was and change it.
                 if (listView1.Sorting == SortOrder.Ascending)
+                {
                     listView1.Sorting = SortOrder.Descending;
+                    listView1.SetSortIcon(e.Column, SortOrder.Descending);
+                }
                 else
+                {
                     listView1.Sorting = SortOrder.Ascending;
+                    listView1.SetSortIcon(e.Column, SortOrder.Ascending);
+                }
+                    
             }
 
             // Call the sort method to manually sort.
@@ -479,6 +501,12 @@ namespace WindowsFormsApplication2
             // Set the ListViewItemSorter property to a new ListViewItemComparer
             // object.
             this.listView1.ListViewItemSorter = new ListViewItemComparer(e.Column, listView1.Sorting);
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //UserControl1 userSettings = new UserControl1();
+            //userSettings.s; 
         } 
     }
 
@@ -510,6 +538,3 @@ namespace WindowsFormsApplication2
     }
     
      }
-
-
-    

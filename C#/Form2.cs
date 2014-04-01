@@ -126,32 +126,32 @@ namespace WindowsFormsApplication2
             dataArray[6] = textBox1_9.Text;
             dataArray[7] = textBox1_10.Text;
             trans1.data = String.Join(" ", dataArray);
+
+            string formatCheck = trans1.messageString;
+            System.Text.RegularExpressions.Regex.IsMatch(formatCheck, @"\A\b[0][x][0-9a-fA-F]{3}[\s[0-9a-fA-F]{1,2}]{1,8}\b\Z");    //Keep working on the format
+            //System.Text.RegularExpressions.Regex.IsMatch(formatCheck, @"\A\b[0-9a-fA-F]+\b\Z");
             
-            //fs.getMes(mess1, 1);
-            //string data = ;
-            label4.Text = trans1.data;
-            //CANdiy.getMes(mess, 1);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             //GetAccessibilityObjectById(CANdiy.
             string[] dataArray = new string[8];
-            trans2.id = textBox1_1.Text;
+            trans2.id = textBox2_1.Text;
             try
             {
                 trans2.dl = Convert.ToInt32(textBox2_2.Text);
                 trans2.timer = Convert.ToInt32(textBox2_11.Text);
             }
             catch { }
-            dataArray[0] = textBox1_3.Text;
-            dataArray[1] = textBox1_4.Text;
-            dataArray[2] = textBox1_5.Text;
-            dataArray[3] = textBox1_6.Text;
-            dataArray[4] = textBox1_7.Text;
-            dataArray[5] = textBox1_8.Text;
-            dataArray[6] = textBox1_9.Text;
-            dataArray[7] = textBox1_10.Text;
+            dataArray[0] = textBox2_3.Text;
+            dataArray[1] = textBox2_4.Text;
+            dataArray[2] = textBox2_5.Text;
+            dataArray[3] = textBox2_6.Text;
+            dataArray[4] = textBox2_7.Text;
+            dataArray[5] = textBox2_8.Text;
+            dataArray[6] = textBox2_9.Text;
+            dataArray[7] = textBox2_10.Text;
             trans2.data = String.Join(" ", dataArray);
 
         }
@@ -159,21 +159,21 @@ namespace WindowsFormsApplication2
         private void button3_Click(object sender, EventArgs e)
         {
             string[] dataArray = new string[8];
-            trans3.id = textBox1_1.Text;
+            trans3.id = textBox3_1.Text;
             try
             {
                 trans3.dl = Convert.ToInt32(textBox3_2.Text);
                 trans3.timer = Convert.ToInt32(textBox3_11.Text);
             }
             catch { }
-            dataArray[0] = textBox1_3.Text;
-            dataArray[1] = textBox1_4.Text;
-            dataArray[2] = textBox1_5.Text;
-            dataArray[3] = textBox1_6.Text;
-            dataArray[4] = textBox1_7.Text;
-            dataArray[5] = textBox1_8.Text;
-            dataArray[6] = textBox1_9.Text;
-            dataArray[7] = textBox1_10.Text;
+            dataArray[0] = textBox3_3.Text;
+            dataArray[1] = textBox3_4.Text;
+            dataArray[2] = textBox3_5.Text;
+            dataArray[3] = textBox3_6.Text;
+            dataArray[4] = textBox3_7.Text;
+            dataArray[5] = textBox3_8.Text;
+            dataArray[6] = textBox3_9.Text;
+            dataArray[7] = textBox3_10.Text;
             trans3.data = String.Join(" ", dataArray);
 
         }

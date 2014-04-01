@@ -59,6 +59,12 @@ namespace WindowsFormsApplication2
             get { return _timer; }
             set { _timer = value; }
         }
+
+        public string messageString
+        {
+            get { return _id + _dl + _data; }
+            set { }
+        }
         
     }
 }
