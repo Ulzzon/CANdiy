@@ -29,6 +29,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox1));
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.labelAuther = new System.Windows.Forms.Label();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.labelProductName = new System.Windows.Forms.Label();
             this.labelVersion = new System.Windows.Forms.Label();
@@ -36,7 +37,6 @@
             this.labelCompanyName = new System.Windows.Forms.Label();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.okButton = new System.Windows.Forms.Button();
-            this.labelAuther = new System.Windows.Forms.Label();
             this.tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -68,6 +68,18 @@
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel.Size = new System.Drawing.Size(417, 265);
             this.tableLayoutPanel.TabIndex = 0;
+            // 
+            // labelAuther
+            // 
+            this.labelAuther.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelAuther.Location = new System.Drawing.Point(139, 76);
+            this.labelAuther.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
+            this.labelAuther.MaximumSize = new System.Drawing.Size(0, 17);
+            this.labelAuther.Name = "labelAuther";
+            this.labelAuther.Size = new System.Drawing.Size(275, 17);
+            this.labelAuther.TabIndex = 26;
+            this.labelAuther.Text = "Auther";
+            this.labelAuther.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // logoPictureBox
             // 
@@ -153,18 +165,6 @@
             this.okButton.Size = new System.Drawing.Size(75, 26);
             this.okButton.TabIndex = 24;
             this.okButton.Text = "&OK";
-            // 
-            // labelAuther
-            // 
-            this.labelAuther.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelAuther.Location = new System.Drawing.Point(139, 76);
-            this.labelAuther.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
-            this.labelAuther.MaximumSize = new System.Drawing.Size(0, 17);
-            this.labelAuther.Name = "labelAuther";
-            this.labelAuther.Size = new System.Drawing.Size(275, 17);
-            this.labelAuther.TabIndex = 26;
-            this.labelAuther.Text = "Auther";
-            this.labelAuther.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // AboutBox1
             // 

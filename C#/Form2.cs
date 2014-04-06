@@ -128,7 +128,7 @@ namespace WindowsFormsApplication2
             trans1.data = String.Join(" ", dataArray);
 
             string formatCheck = trans1.messageString;
-            System.Text.RegularExpressions.Regex.IsMatch(formatCheck, @"\A\b[0][x][0-9a-fA-F]{3}[\s[0-9a-fA-F]{1,2}]{1,8}\b\Z");    //Keep working on the format
+            System.Text.RegularExpressions.Regex.IsMatch(formatCheck, @"\A\b[0][x][0-9a-fA-F]{3}[\s[0-9a-fA-F]{1,2}]{1,8}\b\Z");    //Keep working on the format do this next time
             //System.Text.RegularExpressions.Regex.IsMatch(formatCheck, @"\A\b[0-9a-fA-F]+\b\Z");
             
         }

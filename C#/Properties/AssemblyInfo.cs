@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("CANdiy")]
-[assembly: AssemblyDescription("CANdiy is a tool that allows the user to monitor a CAN-bus using a Arduino.\n For more information about the company visit http://broccoli.se/")]
+[assembly: AssemblyDescription("CANdiy is a tool that allows the user to monitor a CAN-bus using a Arduino.\r\n For more information about the company visit: http://broccoli.se/ \r\n For feedback and questions please email: tobias.olsson@broccoli.se")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Broccoli Engineering")]
 [assembly: AssemblyProduct("CANdiy")]

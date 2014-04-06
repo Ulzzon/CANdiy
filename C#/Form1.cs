@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.IO;
 using System.Collections;
+//using System.DateTime;
 
 
 namespace WindowsFormsApplication2
@@ -136,10 +137,15 @@ namespace WindowsFormsApplication2
         {
             Boolean newItem = true;
             string dir = "";
+            string time = "";
             if (rx)dir = "RX";
             else dir = "TX";
+
+            if (Properties.Settings.Default.TimerSetting == 0) time = stimer;
+            else if(Properties.Settings.Default.TimerSetting == 1) time = String.Format("{0}.{1}",sec,time1);
+            else if (Properties.Settings.Default.TimerSetting == 2) time = DateTime.Now.ToString("HH:mm:ss");
             
-            label1.Text = "tid: " + time1;
+            //label1.Text = "tid: " + time1;
 
             ListViewItem item1 = new ListViewItem("item1");
             item1.Name = id;
@@ -147,23 +153,24 @@ namespace WindowsFormsApplication2
                 {
                     if (item.Name == item1.Name)
                     {
-                        item.Text = "" + stimer;
+                        item.Text = "" +time;
                         item.SubItems[4].Text = "" + data;
                         newItem = false;
                     }
                 }
                 if (newItem == true)
                 {
-                    item1.Text = "" + stimer;
+                    item1.Text = "" + time;
                     item1.SubItems.Add(dir);
                     item1.SubItems.Add(id);
                     item1.SubItems.Add(""+dl);
                     item1.SubItems.Add(data);
                     listView1.Items.AddRange(new ListViewItem[] { item1 });
                 }
+                listView1.Sort();
                 if (checkBox2.Checked)
                 {
-                    string send = String.Format("{0} {1} {2} {3} {4} \n", stimer, id, dir, dl, data);
+                    string send = String.Format("{0} {1} {2} {3} {4} \n", time, id, dir, dl, data);
                     writeToFile(send);
                 }
         }
@@ -329,11 +336,14 @@ namespace WindowsFormsApplication2
 
         private void saveFileDialog1_FileOk_1(object sender, CancelEventArgs e)
         {
+            string timerForm = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"); //MM/dd/yyyy
+            string startString = String.Format("This file was created by CANdiy {0} \n \n", timerForm);
             // Get file name.
             fileDir = saveFileDialog1.FileName;
             // Write to the file name selected.
             // ... You can write the text from a TextBox instead of a string literal.
-            File.WriteAllText(fileDir, "The start of log file \n \n");
+
+            File.WriteAllText(fileDir, startString);
         }
 
         public void writeToFile(string st)
@@ -505,6 +515,8 @@ namespace WindowsFormsApplication2
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            SettingsPage setting = new SettingsPage();
+            setting.ShowDialog();
             //UserControl1 userSettings = new UserControl1();
             //userSettings.s; 
         } 
