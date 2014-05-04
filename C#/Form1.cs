@@ -9,7 +9,6 @@ using System.Windows.Forms;
 using System.Threading;
 using System.IO;
 using System.Collections;
-//using System.DateTime;
 
 
 namespace WindowsFormsApplication2
@@ -65,8 +64,6 @@ namespace WindowsFormsApplication2
                     myString += " ";
                 }
 
-                    //serialPort1.Read(buffer, 0, 8);
-                    //string s = Encoding.UTF8.GetString(buffer, 0, buffer.Length);
                 try
                 {
                     dl = Convert.ToInt32(parts[1]);
@@ -87,7 +84,7 @@ namespace WindowsFormsApplication2
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Start_Button_Click(object sender, EventArgs e)
         {
             if (!serialPort1.IsOpen)
             {
@@ -141,11 +138,10 @@ namespace WindowsFormsApplication2
             if (rx)dir = "RX";
             else dir = "TX";
 
-            if (Properties.Settings.Default.TimerSetting == 0) time = stimer;
-            else if(Properties.Settings.Default.TimerSetting == 1) time = String.Format("{0}.{1}",sec,time1);
+            if (Properties.Settings.Default.TimerSetting == 0) time = String.Format("{0}.{1}", sec, time1);
+            else if(Properties.Settings.Default.TimerSetting == 1) time = stimer;
             else if (Properties.Settings.Default.TimerSetting == 2) time = DateTime.Now.ToString("HH:mm:ss");
             
-            //label1.Text = "tid: " + time1;
 
             ListViewItem item1 = new ListViewItem("item1");
             item1.Name = id;
@@ -167,7 +163,8 @@ namespace WindowsFormsApplication2
                     item1.SubItems.Add(data);
                     listView1.Items.AddRange(new ListViewItem[] { item1 });
                 }
-                listView1.Sort();
+                if (Properties.Settings.Default.AutoSortingON == true) listView1.Sort();
+                
                 if (checkBox2.Checked)
                 {
                     string send = String.Format("{0} {1} {2} {3} {4} \n", time, id, dir, dl, data);
@@ -175,8 +172,15 @@ namespace WindowsFormsApplication2
                 }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Stop_Button_Click(object sender, EventArgs e)
         {
+            timer1.Enabled = false;
+            timer2.Enabled = false;
+            timer3.Enabled = false;
+            timer4.Enabled = false;
+            timer5.Enabled = false;
+            timer6.Enabled = false;
+            timer7.Enabled = false;
             while (serialPort1.IsOpen)
             {
                 try
@@ -187,7 +191,7 @@ namespace WindowsFormsApplication2
             }
             toolStripStatusLabel3.Text = "Stopped";
             listView1.Items.Clear();
-            timer1.Enabled = false;
+            
         }
 
         
@@ -295,7 +299,7 @@ namespace WindowsFormsApplication2
             
             if (checkBox4.Checked && mess2.timer != 0)
             {
-                timer3.Interval = mess2.timer;
+                timer4.Interval = mess2.timer;
                 timer4.Enabled = true;
             }
             else timer5.Enabled = false;
@@ -424,6 +428,7 @@ namespace WindowsFormsApplication2
             {
                 sec++;
                 time1 = 0;
+                toolStripStatusLabel4.Text = String.Format("{0,2:d}:{1,2:d}:{2,2:d}", h, min, sec);
                 if (sec >= 60)
                 {
                     min++;
@@ -436,22 +441,22 @@ namespace WindowsFormsApplication2
                 }
             }
             stimer = String.Format("{0,2:d} : {1,2:d} : {2,2:d} : {3,2:d} ", h, min, sec, time1);
+            
         }
 
         private void timer2_Tick(object sender, EventArgs e)
         {
             //StringFormatFlags.DisplayFormatControl.CompareTo(maskedTextBox1.Text);
-                SendFrame(mess0);
+            SendFrame(mess0);
                 //time2 = 0;
-                toolStripStatusLabel2.Visible = true;
+            toolStripStatusLabel2.Visible = true;
         }
 
         private void timer3_Tick(object sender, EventArgs e)
         {
-            if (mess1.timer != 0)
-            {
-                SendFrame(mess1);
-            }
+           
+            SendFrame(mess1);
+            
         }
 
         private void timer4_Tick(object sender, EventArgs e)
@@ -549,4 +554,4 @@ namespace WindowsFormsApplication2
     }
     }
     
-     }
+}

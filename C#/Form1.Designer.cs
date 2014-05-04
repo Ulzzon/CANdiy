@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.button1 = new System.Windows.Forms.Button();
+            this.Start_Button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Stop_Button = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
@@ -66,8 +66,8 @@
             this.messageSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -83,21 +83,22 @@
             this.timer5 = new System.Windows.Forms.Timer(this.components);
             this.timer6 = new System.Windows.Forms.Timer(this.components);
             this.timer7 = new System.Windows.Forms.Timer(this.components);
+            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // Start_Button
             // 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.Location = new System.Drawing.Point(573, 417);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(193, 54);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Start";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Start_Button.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.Start_Button.Location = new System.Drawing.Point(573, 417);
+            this.Start_Button.Name = "Start_Button";
+            this.Start_Button.Size = new System.Drawing.Size(193, 54);
+            this.Start_Button.TabIndex = 0;
+            this.Start_Button.Text = "Start";
+            this.Start_Button.UseVisualStyleBackColor = true;
+            this.Start_Button.Click += new System.EventHandler(this.Start_Button_Click);
             // 
             // label1
             // 
@@ -108,15 +109,15 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Message";
             // 
-            // button2
+            // Stop_Button
             // 
-            this.button2.Location = new System.Drawing.Point(573, 358);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(193, 53);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Stop";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Stop_Button.Location = new System.Drawing.Point(573, 358);
+            this.Stop_Button.Name = "Stop_Button";
+            this.Stop_Button.Size = new System.Drawing.Size(193, 53);
+            this.Stop_Button.TabIndex = 2;
+            this.Stop_Button.Text = "Stop";
+            this.Stop_Button.UseVisualStyleBackColor = true;
+            this.Stop_Button.Click += new System.EventHandler(this.Stop_Button_Click);
             // 
             // timer1
             // 
@@ -334,7 +335,8 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2,
-            this.toolStripStatusLabel3});
+            this.toolStripStatusLabel3,
+            this.toolStripStatusLabel4});
             this.statusStrip1.Location = new System.Drawing.Point(0, 501);
             this.statusStrip1.Margin = new System.Windows.Forms.Padding(5);
             this.statusStrip1.Name = "statusStrip1";
@@ -393,10 +395,11 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.messageToolStripMenuItem,
-            this.aboutToolStripMenuItem,
-            this.settingsToolStripMenuItem});
+            this.settingsToolStripMenuItem,
+            this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(783, 24);
@@ -432,19 +435,19 @@
             this.toolStripMenuItem1.Text = "Exit";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
-            // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // button3
             // 
@@ -571,6 +574,13 @@
             // 
             this.timer7.Tick += new System.EventHandler(this.timer7_Tick);
             // 
+            // toolStripStatusLabel4
+            // 
+            this.toolStripStatusLabel4.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
+            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(38, 19);
+            this.toolStripStatusLabel4.Text = "Time";
+            // 
             // CANdiy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -609,8 +619,8 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Stop_Button);
+            this.Controls.Add(this.Start_Button);
             this.Controls.Add(this.label1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "CANdiy";
@@ -630,9 +640,9 @@
         #endregion
 
         private System.IO.Ports.SerialPort serialPort1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Start_Button;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Stop_Button;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         protected internal System.Windows.Forms.Label label2;
@@ -683,6 +693,7 @@
         private System.Windows.Forms.Timer timer7;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
     }
 }
 

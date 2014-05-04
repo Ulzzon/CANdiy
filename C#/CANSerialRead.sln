@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CANdiy", "CANdiy.csproj", "{66B5F194-60C9-4D79-B828-2331DD528C8A}"
 EndProject
-Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "CANdiy Setup v.0.1.2", "..\CANdiy Setup v.0.1.2\CANdiy Setup v.0.1.2.isproj", "{04041650-E8D7-470F-A675-C5D3C0EBAB9C}"
+Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "CANdiy Setup", "..\CANdiy Setup v.0.1.2\CANdiy Setup.isproj", "{04041650-E8D7-470F-A675-C5D3C0EBAB9C}"
 	ProjectSection(ProjectDependencies) = postProject
 		{66B5F194-60C9-4D79-B828-2331DD528C8A} = {66B5F194-60C9-4D79-B828-2331DD528C8A}
 	EndProjectSection

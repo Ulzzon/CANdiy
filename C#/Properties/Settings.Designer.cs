@@ -46,5 +46,17 @@ namespace WindowsFormsApplication2.Properties {
                 this["TimerSetting"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AutoSortingON {
+            get {
+                return ((bool)(this["AutoSortingON"]));
+            }
+            set {
+                this["AutoSortingON"] = value;
+            }
+        }
     }
 }

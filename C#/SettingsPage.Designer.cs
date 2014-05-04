@@ -33,6 +33,7 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,10 +43,10 @@
             this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(18, 19);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(38, 17);
+            this.radioButton1.Size = new System.Drawing.Size(102, 17);
             this.radioButton1.TabIndex = 1;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "ms";
+            this.radioButton1.Text = "Absolute time (s)";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
@@ -80,6 +81,7 @@
             this.checkBox1.TabIndex = 4;
             this.checkBox1.Text = "Auto sort new message";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -93,11 +95,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Timer Stamp";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(55, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(224, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "All settings on this page is saved automatically";
+            // 
             // SettingsPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(568, 333);
+            this.ClientSize = new System.Drawing.Size(384, 252);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.checkBox1);
             this.Name = "SettingsPage";
@@ -116,5 +128,6 @@
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

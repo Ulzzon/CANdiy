@@ -14,6 +14,22 @@ namespace WindowsFormsApplication2
         public SettingsPage()
         {
             InitializeComponent();
+
+            if (Properties.Settings.Default.TimerSetting == 0)
+            {
+                radioButton1.Checked = true;
+            }
+            else if (Properties.Settings.Default.TimerSetting == 1 )
+            {
+                radioButton2.Checked = true;
+            }
+            else if (Properties.Settings.Default.TimerSetting == 2)
+            {
+                 radioButton3.Checked = true;
+            }
+
+            if (Properties.Settings.Default.AutoSortingON == true) checkBox1.Checked = true;
+            else checkBox1.Checked = false;
         }
 
 
@@ -45,6 +61,13 @@ namespace WindowsFormsApplication2
             {
                 Properties.Settings.Default.TimerSetting = 2;
             }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true) Properties.Settings.Default.AutoSortingON = true;
+            else Properties.Settings.Default.AutoSortingON = false;
+            
         }
 
 
